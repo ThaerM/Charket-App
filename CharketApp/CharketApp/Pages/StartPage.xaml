@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CharketApp.Pages.StartPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="Black"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid Padding="25">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
+            <controls:CarouselViewControl
+                x:Name="carouselImages"
+                Grid.Row="0" IsSwipeEnabled="False"
+                CurrentPageIndicatorTintColor="#0076ff"
+                Orientation="Horizontal"
+                Position="{Binding SelectedIndex}"
+                ShowIndicators="True"
+                VerticalOptions="FillAndExpand">
+                <controls:CarouselViewControl.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView>
+                            <ContentView.Content>
+                                <Image Aspect="Fill" Source="{Binding}" />
+
+                            </ContentView.Content>
+                        </ContentView>
+                    </DataTemplate>
+                </controls:CarouselViewControl.ItemTemplate>
+            </controls:CarouselViewControl>
+            <Button
+                x:Name="ImageNext"
+                Grid.Row="1"
+                BackgroundColor="#0076ff"
+                Clicked="ContinueHandler"
+                CornerRadius="15"
+                HeightRequest="55"
+                HorizontalOptions="FillAndExpand"
+                Text="Continue"
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
+            <ActivityIndicator
+                x:Name="activityIndicator"
+                Grid.Row="2"
+                HeightRequest="30"
+                VerticalOptions="Center"
+                WidthRequest="30"
+                Color="White" />
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
