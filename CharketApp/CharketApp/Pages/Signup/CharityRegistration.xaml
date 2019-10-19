@@ -1,15 +1,102 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="CharketApp.Pages.Signup.CharityRegistration">
+<ContentPage
+    x:Class="CharketApp.Pages.Signup.CharityRegistration"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Charity Registration From"
+    BackgroundColor="Black"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="15">
+                <Entry
+                    Placeholder="Orginazation Name"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Street Address"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Street Address2 (if present)"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Contact Number"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Office Phone Number"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Mobile Phone Number"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Contact Email Address"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Label Text="Are you a registered charity?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="Can you present evidence of being a registered charity?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="Description the services you offer." TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="Who are your primary services users?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+
+                <Button
+                    BackgroundColor="#0076ff"
+                    Clicked="CharitySubmittHandler"
+                    CornerRadius="15"
+                    HeightRequest="55"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Submit"
+                    TextColor="White" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

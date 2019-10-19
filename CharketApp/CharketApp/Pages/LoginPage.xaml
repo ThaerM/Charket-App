@@ -38,6 +38,7 @@
                     Source="user_icon"
                     WidthRequest="25" />
                 <Entry
+                    x:Name="UsernameEnty"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Username"
                     PlaceholderColor="WhiteSmoke"
@@ -51,6 +52,8 @@
                     Source="password_icon"
                     WidthRequest="25" />
                 <Entry
+                    x:Name="PasswordEntry"
+                    IsPassword="True"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Password"
                     PlaceholderColor="WhiteSmoke"
@@ -63,15 +66,27 @@
                 CornerRadius="15"
                 HeightRequest="55"
                 HorizontalOptions="FillAndExpand"
-                Text="Continue"
+                Text="Login"
                 TextColor="White"
                 VerticalOptions="EndAndExpand" />
             <StackLayout
                 Margin="5,15,5,0"
                 HorizontalOptions="CenterAndExpand"
                 Orientation="Horizontal">
-                <Label Text="Don't have an account?" TextColor="White" />
-                <Label Text="Sign-up here." TextColor="White" />
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Don't have an account?"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    BackgroundColor="Transparent"
+                    Text="Sign-up here."
+                    TextColor="White"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Label.GestureRecognizers>
+                </Label>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

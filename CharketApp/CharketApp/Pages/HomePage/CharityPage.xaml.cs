@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CharketApp.Pages
+namespace CharketApp.Pages.HomePage
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomePage : ContentPage
+    public partial class CharityPage : ContentPage
     {
-        public HomePage()
+        public CharityPage()
         {
             InitializeComponent();
         }

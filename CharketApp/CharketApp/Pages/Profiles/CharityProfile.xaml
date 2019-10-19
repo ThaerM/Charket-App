@@ -1,15 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="CharketApp.Pages.Profiles.CharityProfile">
+<ContentPage
+    x:Class="CharketApp.Pages.Profiles.CharityProfile"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="Blue" HeightRequest="150">
+                <Image Source="camera" />
+            </Frame>
+            <Entry
+                Placeholder="Charity Name"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                IsPassword="True"
+                Placeholder="Password"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                Placeholder="Food you do accept"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                Placeholder="Most suitable pick-up time(e.g 9 a.m.- 4 p.m.)"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Button
+                BackgroundColor="#0076ff"
+                Clicked="CharitySubmittHandler"
+                CornerRadius="15"
+                HeightRequest="55"
+                HorizontalOptions="FillAndExpand"
+                Text="Done"
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

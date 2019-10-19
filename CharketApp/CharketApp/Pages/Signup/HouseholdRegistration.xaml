@@ -1,15 +1,117 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="CharketApp.Pages.Signup.HouseholdRegistration">
+<ContentPage
+    x:Class="CharketApp.Pages.Signup.HouseholdRegistration"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Household Registation From"
+    BackgroundColor="Black"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <StackLayout Padding="10" Spacing="15">
+                <Entry
+                    Placeholder="Household Owner"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Content Name"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Email Address"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Contact Number"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Entry
+                    Placeholder="Adress"
+                    PlaceholderColor="WhiteSmoke"
+                    TextColor="White" />
+                <Label Text="Where can the food be collected from?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="Give a desciption of the types of food you would like to donate." TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="Estimate the quanlity of food that will be available in each donation." TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="What is the estimated expiry date of the donated food?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="How Frequently would you have surplus food to donate?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Label Text="When would you be avaliable during the day to accept a pick-up from a charity or a votunteer?" TextColor="WhiteSmoke" />
+                <Frame
+                    Padding="5"
+                    BackgroundColor="Transparent"
+                    BorderColor="WhiteSmoke"
+                    CornerRadius="5"
+                    HeightRequest="100">
+                    <Editor
+                        Placeholder="Type your answer here"
+                        PlaceholderColor="WhiteSmoke"
+                        TextColor="White" />
+                </Frame>
+                <Button
+                    BackgroundColor="#0076ff"
+                    Clicked="HouseHoldHandler"
+                    CornerRadius="15"
+                    HeightRequest="55"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Submit"
+                    TextColor="White" />
+            </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

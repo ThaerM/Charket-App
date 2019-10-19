@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿using CharketApp.Pages.Profiles;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,6 +11,11 @@ namespace CharketApp.Pages.Signup
         public CharityRegistration()
         {
             InitializeComponent();
+        }
+
+        private async void CharitySubmittHandler(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new CharityProfile());
         }
     }
 }

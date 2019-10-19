@@ -4,12 +4,42 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="CharketApp.Pages.Profiles.SupermarketProfile">
+             x:Class="CharketApp.Pages.Profiles.SupermarketProfile" Title="Create your own prfoile:">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Frame BackgroundColor="Blue" HeightRequest="150">
+                <Image Source="camera" />
+            </Frame>
+            <Entry
+                Placeholder="Supermarket Name"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                IsPassword="True"
+                Placeholder="Password"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                Placeholder="Email"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                Placeholder="Location"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Entry
+                Placeholder="Most suitable pick-up time(e.g 9 a.m.- 4 p.m.)"
+                PlaceholderColor="WhiteSmoke"
+                TextColor="White" />
+            <Button
+                BackgroundColor="#0076ff"
+                Clicked="CharitySubmittHandler"
+                CornerRadius="15"
+                HeightRequest="55"
+                HorizontalOptions="FillAndExpand"
+                Text="Done"
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

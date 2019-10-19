@@ -16,5 +16,20 @@ namespace CharketApp.Pages
         {
             InitializeComponent();
         }
+
+        private void ContactUsHnadler(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ReportHandler(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LogoutHandler(object sender, EventArgs e)
+        {
+
+        }
     }
 }

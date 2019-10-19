@@ -1,15 +1,74 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="CharketApp.Pages.TypeSignup.Signup">
+<ContentPage
+    x:Class="CharketApp.Pages.TypeSignup.Signup"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Signup"
+    BackgroundColor="Black"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="25" Spacing="25">
+            <Label
+                FontSize="Medium"
+                HorizontalTextAlignment="Center"
+                Text="Welcome! Lest's get you started, Sign as a:"
+                TextColor="White" />
+            <Button
+                BackgroundColor="#0076ff"
+                Clicked="GoToDonorHandler"
+                CornerRadius="15"
+                HeightRequest="55"
+                HorizontalOptions="FillAndExpand"
+                Text="Donor"
+                TextColor="White" />
+            <StackLayout HeightRequest="1" Orientation="Horizontal">
+                <BoxView
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    Color="White" />
+                <StackLayout HeightRequest="25" RotationY="19">
+                    <Label
+                        HorizontalTextAlignment="Center"
+                        Text="OR"
+                        TextColor="White"
+                        VerticalTextAlignment="Start" />
+                </StackLayout>
+                <BoxView
+                    HeightRequest="1"
+                    HorizontalOptions="FillAndExpand"
+                    Color="White" />
+            </StackLayout>
+            <Button
+                BackgroundColor="#0076ff"
+                Clicked="GoToCharityHandler"
+                CornerRadius="15"
+                HeightRequest="55"
+                HorizontalOptions="FillAndExpand"
+                Text="Charity"
+                TextColor="White" />
+            <StackLayout
+                Margin="5,15,5,0"
+                HorizontalOptions="CenterAndExpand"
+                Orientation="Horizontal"
+                VerticalOptions="EndAndExpand">
+                <Label
+                    HorizontalTextAlignment="Center"
+                    Text="Alerday have an account?"
+                    TextColor="White"
+                    VerticalTextAlignment="Center" />
+                <Label
+                    BackgroundColor="Transparent"
+                    Text="Login here."
+                    TextColor="White"
+                    TextDecorations="Underline">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="GoToLoginHandler" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

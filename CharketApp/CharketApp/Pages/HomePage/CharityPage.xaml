@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="CharketApp.Pages.ChatPage"
+    x:Class="CharketApp.Pages.HomePage.CharityPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -8,24 +8,17 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
+            <Label Text="Charities" />
             <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Frame>
-                                <Label Text="{Binding}" TextColor="Gray" />
-                            </Frame>
-                            <Label Text="{Binding}" TextColor="Gray" />
+                            <Label Text="{Binding}" />
+                            <Image HeightRequest="100" Source="{Binding}" />
                         </StackLayout>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Frame VerticalOptions="EndAndExpand">
-                <Entry
-                    Placeholder="Message"
-                    PlaceholderColor="Gray"
-                    TextColor="Black" />
-            </Frame>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

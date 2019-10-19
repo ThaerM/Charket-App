@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CharketApp.Pages.Profiles;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,11 @@ namespace CharketApp.Pages.Signup
         public HouseholdRegistration()
         {
             InitializeComponent();
+        }
+
+        private async void HouseHoldHandler(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new HouseholdProfile());
         }
     }
 }
