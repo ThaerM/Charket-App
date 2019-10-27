@@ -6,6 +6,8 @@ namespace CharketApp.Services
 {
     public static class AppConstant
     {
-        public static string URLData = "https://charket-29581.firebaseio.com/";
+        public static string URLData { get { return "https://charket-29581.firebaseio.com/"; } }
+
+        public static string StorageURLData { get { return "gs://charket-29581.appspot.com/"; } }
     }
 }

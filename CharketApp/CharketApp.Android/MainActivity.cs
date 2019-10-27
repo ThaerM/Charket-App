@@ -3,6 +3,7 @@ using Android.Content.PM;
 using Android.Runtime;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
+using Plugin.CurrentActivity;
 
 namespace CharketApp.Droid
 {
@@ -18,6 +19,7 @@ namespace CharketApp.Droid
 
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CarouselViewRenderer.Init();
             LoadApplication(new App());
         }

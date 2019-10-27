@@ -13,8 +13,8 @@ namespace CharketApp.Pages.Signup
             InitializeComponent();
             OrginazationNameEntry.Completed += (sender,e) => StreetAddressEntry.Focus();
             StreetAddressEntry.Completed += (sender, e) => StreetAddress2Entry.Focus();
-            StreetAddress2Entry.Completed += (sender, e) => ContactNumberEntry.Focus();
-            ContactNumberEntry.Completed += (sender, e) => OfficePhoneNumberEntry.Focus();
+            StreetAddress2Entry.Completed += (sender, e) => PostcodeEntry.Focus();
+            PostcodeEntry.Completed += (sender, e) => OfficePhoneNumberEntry.Focus();
             OfficePhoneNumberEntry.Completed += (sender, e) => MobileNumberEntry.Focus();
             MobileNumberEntry.Completed += (sender, e) => ContactEmailEntry.Focus();
            // ContactEmailEntry.Completed += (sender, e) => ContactEmailEntry.Focus();

@@ -1,9 +1,6 @@
 ﻿using CharketApp.Model;
 using CharketApp.Pages.HomePage;
 using CharketApp.Services;
-using Firebase.Database;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.Forms;
 
@@ -30,11 +27,11 @@ namespace CharketApp.ViewModel
         //Command to Run after click on login button
         public ICommand OnLoginCommand { private set; get; }
         //Instance with firebase "Database"
-        FirebaseClient firebase;
+        DBFirebase firebase;
         //Constructer
         public LoginViewModel()
         {
-            firebase = new FirebaseClient(AppConstant.URLData);
+            firebase = new DBFirebase();
             OnLoginCommand = new Command(Login);
         }
         //After Click Command Call this method
@@ -63,7 +60,7 @@ namespace CharketApp.ViewModel
         async void CheckUserName()
         {
             //Call the user from database
-            var UserData = await GetUsername();
+            var UserData = await firebase.LoginUser(UserName, Password);
             //Check if database return the user or not
             if (UserData != null)
             {
@@ -91,30 +88,12 @@ namespace CharketApp.ViewModel
                 {
                     await App.Current.MainPage.DisplayAlert("", "Wrong user rule", "Ok");
                 }
-
             }
             else
             {
                 //Show the message if the user is null or not return 
                 await App.Current.MainPage.DisplayAlert("", "The Username or password is wrong", "Ok");
             }
-        }
-
-        //Return data from firebase
-        private async Task<UserData> GetUsername()
-        {
-            //Integration with database and find the username and password 
-            var userData = (await firebase.Child("Users").OnceAsync<UserData>()).
-                Where(item => item.Object.UserName.ToLower() == UserName.ToLower()
-                && item.Object.Password == Password).FirstOrDefault();
-            //Check the user is null
-            if (userData == null)
-            {
-                //return empty 
-                return null;
-            }
-            //return the object 
-            return userData.Object;
         }
     }
 }
