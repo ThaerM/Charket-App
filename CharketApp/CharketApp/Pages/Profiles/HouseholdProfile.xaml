@@ -8,38 +8,38 @@
     Title="Create your own profile:"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="Blue" HeightRequest="150">
+        <StackLayout Padding="15">
+            <Frame BackgroundColor="#226dc0" HeightRequest="150">
                 <Image Source="camera" />
             </Frame>
             <Entry
                 Placeholder="First Name"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Entry
                 Placeholder="Last Name"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Entry
                 Placeholder="Email"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Entry
                 Placeholder="Username"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Entry
                 IsPassword="True"
                 Placeholder="Password"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Entry
                 Placeholder="Location (optional)"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Entry
                 Placeholder="Most suitable pick-up time(e.g 9 a.m.- 4 p.m.)"
-                PlaceholderColor="WhiteSmoke"
+                PlaceholderColor="Gray"
                 TextColor="White" />
             <Button
                 BackgroundColor="#0076ff"

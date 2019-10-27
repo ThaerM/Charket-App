@@ -6,39 +6,45 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Charity Registration From"
-    BackgroundColor="Black"
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10" Spacing="15">
                 <Entry
+                    x:Name="OrginazationNameEntry"
                     Placeholder="Orginazation Name"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Entry
+                    x:Name="StreetAddressEntry"
                     Placeholder="Street Address"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Entry
-                    Placeholder="Street Address2 (if present)"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    x:Name="StreetAddress2Entry"
+                    Placeholder="Street address 2 (optional)"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Entry
-                    Placeholder="Contact Number"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    x:Name="PostcodeEntry"
+                    Placeholder="Postcode"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Entry
+                    x:Name="OfficePhoneNumberEntry"
                     Placeholder="Office Phone Number"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Entry
+                    x:Name="MobileNumberEntry"
                     Placeholder="Mobile Phone Number"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Entry
+                    x:Name="ContactEmailEntry"
                     Placeholder="Contact Email Address"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
                 <Label Text="Are you a registered charity?" TextColor="WhiteSmoke" />
                 <Frame
                     Padding="5"
@@ -48,8 +54,8 @@
                     HeightRequest="100">
                     <Editor
                         Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
+                        PlaceholderColor="Gray"
+                        TextColor="Black" />
                 </Frame>
                 <Label Text="Can you present evidence of being a registered charity?" TextColor="WhiteSmoke" />
                 <Frame

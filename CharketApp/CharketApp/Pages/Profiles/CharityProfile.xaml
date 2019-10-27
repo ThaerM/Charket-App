@@ -7,8 +7,8 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame BackgroundColor="Blue" HeightRequest="150">
+        <StackLayout Padding="15">
+            <Frame BackgroundColor="#226dc0" HeightRequest="150">
                 <Image Source="camera" />
             </Frame>
             <Entry

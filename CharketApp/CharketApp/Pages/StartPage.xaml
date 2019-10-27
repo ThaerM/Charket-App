@@ -6,7 +6,7 @@
     xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    BackgroundColor="Black"
+    BackgroundColor="White"
     mc:Ignorable="d">
     <ContentPage.Content>
         <Grid Padding="25">
@@ -17,8 +17,9 @@
             </Grid.RowDefinitions>
             <controls:CarouselViewControl
                 x:Name="carouselImages"
-                Grid.Row="0" IsSwipeEnabled="False"
+                Grid.Row="0"
                 CurrentPageIndicatorTintColor="#0076ff"
+                IsSwipeEnabled="False"
                 Orientation="Horizontal"
                 Position="{Binding SelectedIndex}"
                 ShowIndicators="True"
@@ -27,8 +28,7 @@
                     <DataTemplate>
                         <ContentView>
                             <ContentView.Content>
-                                <Image Aspect="Fill" Source="{Binding}" />
-
+                                <Image Aspect="AspectFit" Source="{Binding}" />
                             </ContentView.Content>
                         </ContentView>
                     </DataTemplate>

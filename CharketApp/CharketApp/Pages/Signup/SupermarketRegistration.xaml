@@ -5,92 +5,236 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="Supermarket Registration From"
-    BackgroundColor="Black"
+    Title="Supermarket Registration Forms"
     mc:Ignorable="d">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10" Spacing="15">
                 <Entry
-                    Placeholder="Name of Business"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    x:Name="NameBusinessEntry"
+                    Placeholder="Name of business"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
-                    Placeholder="Content Name"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    x:Name="ContentNameEntry"
+                    Placeholder="Contact name"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
-                    Placeholder="Email Address"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    x:Name="EmailAddressEntry"
+                    Placeholder="Email address"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
-                    Placeholder="Contact Number"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    x:Name="ContactNumberEntry"
+                    Placeholder="Contact number"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
-                    Placeholder="Adress"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
-                <Label Text="Where can the food be collected from?" TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
-                <Label Text="Give a desciption of the types of food you would like to donate." TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
-                <Label Text="Estimate the quanlity of food that will be available in each donation." TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
-                <Label Text="How Frequently would you have surplus food to donate?" TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
-                <Label Text="When would you be avaliable during the day to accept a pick-up from a charity or a votunteer?" TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
+                    x:Name="AddressEntry"
+                    Placeholder="Address"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+
+
+                <!--  *******************************  -->
+                <Label Text="Where can the food be collected from?" TextColor="Gray" />
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox
+                            x:Name="SupermarketCheckBox"
+                            CheckedChanged="SupermarketCheckHnadler"
+                            IsChecked="True" />
+                        <Label
+                            Text="Supermarket"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox x:Name="otherSupermarketCheckBox" CheckedChanged="OtherSupermarketCheckHandler" />
+                        <Label
+                            Text="Other"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                        <Entry
+                            IsVisible="False"
+                            Placeholder="Type your answer here"
+                            PlaceholderColor="Gray"
+                            TextColor="Black">
+                            <Entry.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Source={x:Reference otherSupermarketCheckBox}, Path=IsChecked}"
+                                    TargetType="Entry"
+                                    Value="True">
+                                    <Setter Property="IsVisible" Value="True" />
+                                </DataTrigger>
+                            </Entry.Triggers>
+                        </Entry>
+                    </StackLayout>
+                </StackLayout>
+
+
+
+                <!--  *******************************  -->
+                <Label Text="Please give a description of the type of food you would like to donate?" TextColor="Gray" />
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="CannedFoodCheckBox" />
+                    <Label Text="Canned Food" TextColor="Black" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="DryFoodCheckBox" />
+                    <Label Text="Dry Food" TextColor="Black" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="FruitsCheckBox" />
+                    <Label Text="Fruits Food" TextColor="Black" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="VegetablesCheckBox" />
+                    <Label Text="Vegetables" TextColor="Black" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox x:Name="otherFoodCheckBox" />
+                    <Label
+                        Text="Other"
+                        TextColor="Black"
+                        VerticalTextAlignment="Center" />
+                    <Entry
+                        IsVisible="False"
+                        Placeholder="Other"
+                        PlaceholderColor="Gray"
+                        TextColor="Black">
+                        <Entry.Triggers>
+                            <DataTrigger
+                                Binding="{Binding Source={x:Reference otherFoodCheckBox}, Path=IsChecked}"
+                                TargetType="Entry"
+                                Value="True">
+                                <Setter Property="IsVisible" Value="True" />
+                            </DataTrigger>
+                        </Entry.Triggers>
+                    </Entry>
+                </StackLayout>
+
+
+
+                <!--  *******************************  -->
+                <Label Text="On average, what quantity of food will be available in each donation?" TextColor="Gray" />
+                <Entry
+                    Keyboard="Numeric"
+                    Placeholder="On average"
+                    PlaceholderColor="Gray"
+                    TextColor="Black" />
+
+
+                <!--  *******************************  -->
+                <Label Text="What is the estimated expiry date on the food?" TextColor="Gray" />
+                <Picker
+                    x:Name="ExpireDatePicker"
+                    Title="Select"
+                    TextColor="Black"
+                    TitleColor="Black"
+                    WidthRequest="150">
+                    <Picker.Items>
+                        <x:String>one week before expiry date</x:String>
+                        <x:String>Two weeks before expiry date</x:String>
+                        <x:String>one month before expiry date</x:String>
+                        <x:String>Two months before expiry date</x:String>
+                        <x:String>Other</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry
+                    IsVisible="False"
+                    Placeholder="Write the other here..."
+                    PlaceholderColor="Gray"
+                    TextColor="Black">
+                    <Entry.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference ExpireDatePicker}, Path=SelectedIndex}"
+                            TargetType="Entry"
+                            Value="4">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+
+
+                <!--  *******************************  -->
+                <Label Text="How frequently would you have surplus food to donate?" TextColor="Gray" />
+                <Picker
+                    x:Name="otherOnceDateDatePicker"
+                    Title="Select"
+                    TextColor="Black"
+                    TitleColor="Black"
+                    WidthRequest="150">
+                    <Picker.Items>
+                        <x:String>Every Day</x:String>
+                        <x:String>Once every three Days</x:String>
+                        <x:String>Once every week</x:String>
+                        <x:String>Once every two weeks</x:String>
+                        <x:String>Once evry month</x:String>
+                        <x:String>Other</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry
+                    IsVisible="False"
+                    Placeholder="Write the other here..."
+                    PlaceholderColor="Gray"
+                    TextColor="Black">
+                    <Entry.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference otherOnceDateDatePicker}, Path=SelectedIndex}"
+                            TargetType="Entry"
+                            Value="5">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+
+
+                <!--  *******************************  -->
+                <Label Text="During what time period each day would you require a charity to collect the donation?" TextColor="Gray" />
+                <Picker
+                    x:Name="timeCharityPicker"
+                    Title="Select time"
+                    TextColor="Black"
+                    TitleColor="Black"
+                    WidthRequest="150">
+                    <Picker.Items>
+                        <x:String>Morning (between 8 am – 12 pm)</x:String>
+                        <x:String>Noon (between 12 pm – 4pm)</x:String>
+                        <x:String>Evening (4pm – 8 pm)</x:String>
+                        <x:String>Other</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Entry
+                    IsVisible="False"
+                    Placeholder="Write the time here..."
+                    PlaceholderColor="Gray"
+                    TextColor="Black">
+                    <Entry.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Source={x:Reference timeCharityPicker}, Path=SelectedIndex}"
+                            TargetType="Entry"
+                            Value="3">
+                            <Setter Property="IsVisible" Value="True" />
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+                <!--  *******************************  -->
+
+
                 <Button
                     BackgroundColor="#0076ff"
                     Clicked="SupermarketSumitHandler"

@@ -5,10 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    BackgroundColor="Black"
+    xmlns:viewModel="clr-namespace:CharketApp.ViewModel"
+    BackgroundColor="White"
     NavigationPage.HasBackButton="False"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel x:Name="loginVM"/>
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Margin="5" Padding="14">
             <Grid Margin="0,10,0,50">
@@ -22,11 +26,10 @@
                     FontSize="Large"
                     HorizontalTextAlignment="Center"
                     Text="Login"
-                    TextColor="White" />
+                    TextColor="Black" />
                 <Image
                     Grid.Row="1"
                     Aspect="Fill"
-                    BackgroundColor="White"
                     HeightRequest="150"
                     Source="LogoLogin" />
             </Grid>
@@ -41,8 +44,9 @@
                     x:Name="UsernameEnty"
                     HorizontalOptions="FillAndExpand"
                     Placeholder="Username"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    Text="{Binding UserName}"
+                    TextColor="Black" />
 
             </StackLayout>
             <StackLayout Margin="0,10,0,10" Orientation="Horizontal">
@@ -53,16 +57,17 @@
                     WidthRequest="25" />
                 <Entry
                     x:Name="PasswordEntry"
-                    IsPassword="True"
                     HorizontalOptions="FillAndExpand"
+                    IsPassword="True"
                     Placeholder="Password"
-                    PlaceholderColor="WhiteSmoke"
-                    TextColor="White" />
+                    PlaceholderColor="Gray"
+                    Text="{Binding Password}"
+                    TextColor="Black" />
             </StackLayout>
 
             <Button
-                x:Name="ImageNext"
                 BackgroundColor="#0076ff"
+                Command="{Binding OnLoginCommand}"
                 CornerRadius="15"
                 HeightRequest="55"
                 HorizontalOptions="FillAndExpand"
@@ -76,12 +81,12 @@
                 <Label
                     HorizontalTextAlignment="Center"
                     Text="Don't have an account?"
-                    TextColor="White"
+                    TextColor="Gray"
                     VerticalTextAlignment="Center" />
                 <Label
                     BackgroundColor="Transparent"
                     Text="Sign-up here."
-                    TextColor="White"
+                    TextColor="Black"
                     TextDecorations="Underline">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />

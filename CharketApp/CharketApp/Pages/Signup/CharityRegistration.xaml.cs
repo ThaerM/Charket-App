@@ -11,6 +11,13 @@ namespace CharketApp.Pages.Signup
         public CharityRegistration()
         {
             InitializeComponent();
+            OrginazationNameEntry.Completed += (sender,e) => StreetAddressEntry.Focus();
+            StreetAddressEntry.Completed += (sender, e) => StreetAddress2Entry.Focus();
+            StreetAddress2Entry.Completed += (sender, e) => ContactNumberEntry.Focus();
+            ContactNumberEntry.Completed += (sender, e) => OfficePhoneNumberEntry.Focus();
+            OfficePhoneNumberEntry.Completed += (sender, e) => MobileNumberEntry.Focus();
+            MobileNumberEntry.Completed += (sender, e) => ContactEmailEntry.Focus();
+           // ContactEmailEntry.Completed += (sender, e) => ContactEmailEntry.Focus();
         }
 
         private async void CharitySubmittHandler(object sender, EventArgs e)

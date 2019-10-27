@@ -16,5 +16,10 @@ namespace CharketApp.Pages.Profiles
         {
             InitializeComponent();
         }
+
+        private void CharitySubmittHandler(object sender, EventArgs e)
+        {
+
+        }
     }
 }
