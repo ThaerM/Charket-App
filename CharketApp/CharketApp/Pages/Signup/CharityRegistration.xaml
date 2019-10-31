@@ -3,6 +3,7 @@
     x:Class="CharketApp.Pages.Signup.CharityRegistration"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controller="clr-namespace:CharketApp.Controler"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Charity Registration From"
@@ -10,90 +11,123 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10" Spacing="15">
+                <!--  *******************************  -->
                 <Entry
                     x:Name="OrginazationNameEntry"
                     Placeholder="Orginazation Name"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
+
+                <!--  *******************************  -->
                 <Entry
                     x:Name="StreetAddressEntry"
                     Placeholder="Street Address"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
                     x:Name="StreetAddress2Entry"
                     Placeholder="Street address 2 (optional)"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
                     x:Name="PostcodeEntry"
                     Placeholder="Postcode"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
                     x:Name="OfficePhoneNumberEntry"
                     Placeholder="Office Phone Number"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
                     x:Name="MobileNumberEntry"
                     Placeholder="Mobile Phone Number"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
+
+
+                <!--  *******************************  -->
                 <Entry
                     x:Name="ContactEmailEntry"
                     Placeholder="Contact Email Address"
                     PlaceholderColor="Gray"
                     TextColor="Black" />
-                <Label Text="Are you a registered charity?" TextColor="WhiteSmoke" />
+
+
+                <!--  *******************************  -->
+                <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                    <Label Text="Are you a registered charity?" TextColor="Gray" />
+                    <BoxView BackgroundColor="Transparent" WidthRequest="50" />
+                    <Label Text="No" TextColor="Gray" />
+                    <Switch IsToggled="True" />
+                    <Label Text="Yes" TextColor="Gray" />
+                </StackLayout>
+                <!--  *******************************  -->
+
+                <Label Text="Can you present evidence of being a registered charity?" TextColor="Gray" />
                 <Frame
                     Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
+                    BorderColor="Gray"
                     CornerRadius="5"
                     HeightRequest="100">
-                    <Editor
+                    <controller:CustomEditor
+                        BackgroundColor="Transparent"
                         Placeholder="Type your answer here"
                         PlaceholderColor="Gray"
                         TextColor="Black" />
                 </Frame>
-                <Label Text="Can you present evidence of being a registered charity?" TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
-                <Label Text="Description the services you offer." TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
-                <Label Text="Who are your primary services users?" TextColor="WhiteSmoke" />
-                <Frame
-                    Padding="5"
-                    BackgroundColor="Transparent"
-                    BorderColor="WhiteSmoke"
-                    CornerRadius="5"
-                    HeightRequest="100">
-                    <Editor
-                        Placeholder="Type your answer here"
-                        PlaceholderColor="WhiteSmoke"
-                        TextColor="White" />
-                </Frame>
 
+
+                <!--  *******************************  -->
+                <Label Text="Describe the services you offer." TextColor="Gray" />
+                <StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox
+                            x:Name="FoodServiceCheckBox"
+                            CheckedChanged="FoodServiceCheckHnadler"
+                            IsChecked="True" />
+                        <Label
+                            Text="Food donation charity"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <CheckBox x:Name="otherFoodServiceCheckBox" CheckedChanged="OtherFoodServiceCheckHandler" />
+                        <Label
+                            Text="Other"
+                            TextColor="Black"
+                            VerticalTextAlignment="Center" />
+                        <Entry
+                            IsVisible="False"
+                            Placeholder="Type your answer here"
+                            PlaceholderColor="Gray"
+                            TextColor="Black">
+                            <Entry.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Source={x:Reference OtherFoodServiceCheckHandler}, Path=IsChecked}"
+                                    TargetType="Entry"
+                                    Value="True">
+                                    <Setter Property="IsVisible" Value="True" />
+                                </DataTrigger>
+                            </Entry.Triggers>
+                        </Entry>
+                    </StackLayout>
+                </StackLayout>
+
+
+                <!--  *******************************  -->
                 <Button
                     BackgroundColor="#0076ff"
                     Clicked="CharitySubmittHandler"

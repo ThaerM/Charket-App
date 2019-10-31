@@ -142,7 +142,6 @@ namespace CharketApp.Services
 
         #endregion
 
-
         #region Upload And Download And Delete File
         //On Request to upload file from firebase storage
         public async void OnUploadFile(Image imageController = null)

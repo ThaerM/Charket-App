@@ -5,8 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:CharketApp.ViewModel"
     Title="Supermarket Registration Forms"
     mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <viewModel:SupermarketRegViewModel x:Name="SupermarketVM" />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10" Spacing="15">
