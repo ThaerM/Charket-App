@@ -21,7 +21,7 @@ namespace CharketApp.Pages.Signup
 
         private async void SupermarketSumitHandler(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new SupermarketProfile());
+            await Navigation.PushAsync(new SupermarketProfile(SupermarketVM));
         }
 
         private void SupermarketCheckHnadler(object sender, CheckedChangedEventArgs e)

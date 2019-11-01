@@ -19,6 +19,7 @@ namespace CharketApp.Model
         public string Email { get; set; }
         public string Location { get; set; }
         public string PickUpTime { get; set; }
+        public string ImageName { get; set; }
 
         public SuperMarketModel SuperMarket { get; set; }
         public HouseHoldModel HouseHoldModel { get; set; }
@@ -32,28 +33,49 @@ namespace CharketApp.Model
         public string ContentName { get; set; }
         public string EmailAddress { get; set; }
         public string Address { get; set; }
-        public string FoodBeCollectedFrom { get; set; }
-        public string FoodDescription { get; set; }
-        public string EstimateQualityFood { get; set; }
-        public string FoodToDonate { get; set; }
-        public string AcceptFromCharity { get; set; }
+        public string ContactNumber { get; set; }
+        public FoodFrom FoodBeCollectedFrom { get; set; }
+        public FoodDescription FoodDescription { get; set; }
+        public string AverageFood { get; set; }
+        public string EstimateExpiryFood { get; set; }
+        public string FrequentlyFood { get; set; }
+        public string DuringDate { get; set; }
+
     }
 
+    public class FoodFrom
+    {
+        public bool IsSuperMarket { get; set; }
+        public string OtherTypeMarket { get; set; }
+    }
+    public class FoodDescription
+    {
+        public bool CannedFood { get; set; }
+        public bool Dryfood { get; set; }
+        public bool FuritsFood { get; set; }
+        public bool Vegetables { get; set; }
+        public string OtherFoodCollection { get; set; }
+    }
     //Household Data
     public class HouseHoldModel
     {
-        public string HouseholdOwner { get; set; }
         public string ContentName { get; set; }
         public string EmailAddress { get; set; }
         public string ContactNumber { get; set; }
         public string Address { get; set; }
-        public string FoodBeCollectedFrom { get; set; }
-        public string FoodDescription { get; set; }
-        public string EstimateQualityFood { get; set; }
-        public string ExpiryDateFood { get; set; }
-        public string FoodToDonate { get; set; }
-        public string AcceptFromCharity { get; set; }
+        public FoodFromHouse FoodBeCollectedFrom { get; set; }
+        public FoodDescription FoodDescription { get; set; }
+        public string AverageFood { get; set; }
+        public string EstimateExpiryFood { get; set; }
+        public string FrequentlyFood { get; set; }
+        public string DuringDate { get; set; }
     }
+    public class FoodFromHouse
+    {
+        public bool IsHouse { get; set; }
+        public string OtherTypeHouse { get; set; }
+    }
+
 
     //Charity Data
     public class CharityModel
@@ -61,14 +83,21 @@ namespace CharketApp.Model
         public string OrginazationName { get; set; }
         public string StreetAddress { get; set; }
         public string StreetAddress2 { get; set; }
-        public string ContactNumber { get; set; }
+        public string PostalCode { get; set; }
         public string OfficePhoneNumber { get; set; }
         public string MobilePhoneNumber { get; set; }
         public string ContactEmailAddress { get; set; }
-        public string IsCharity { get; set; }
-        public string PresentEvidence { get; set; }
-        public string DescriptionService { get; set; }
-        public string PrimaryServicesUser { get; set; }
-
+        public FoodFromCharity DescriptionService { get; set; }
+        public FoodDonationCharity foodDonationCharity { get; set; }
+    }
+    public class FoodDonationCharity
+    {
+        public bool isFoodDontationCharity { get; set; }
+        public string IsOtherFoodDontationCharit { get; set; }
+    }
+    public class FoodFromCharity
+    {
+        public bool isCharity { get; set; }
+        public string OtherTypeCharity { get; set; }
     }
 }

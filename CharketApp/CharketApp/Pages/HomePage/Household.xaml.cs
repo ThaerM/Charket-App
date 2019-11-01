@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CharketApp.Model;
+using CharketApp.Pages.DetailsPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +17,15 @@ namespace CharketApp.Pages.HomePage
         public Household()
         {
             InitializeComponent();
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            if (e.Item != null)
+            {
+                var item = (UserData)e.Item;
+                Navigation.PushAsync(new HouseHoldDetailsPage(item));
+            }
         }
     }
 }

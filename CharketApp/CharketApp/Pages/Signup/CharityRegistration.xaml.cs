@@ -23,7 +23,7 @@ namespace CharketApp.Pages.Signup
 
         private async void CharitySubmittHandler(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new CharityProfile());
+            await Navigation.PushAsync(new CharityProfile(HouseViewModel));
         }
 
         private void FoodServiceCheckHnadler(object sender, CheckedChangedEventArgs e)

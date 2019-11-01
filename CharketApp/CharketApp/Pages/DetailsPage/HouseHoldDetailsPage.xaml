@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CharketApp.Pages.DetailsPage.HouseHoldDetailsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+
+            <ListView
+                x:Name="_lstChat"
+                Grid.Row="0"
+                ItemsSource="{Binding ChatCollection}"
+                SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+
+                        <TextCell
+                            Detail="{Binding UserMessage}"
+                            DetailColor="Fuchsia"
+                            Text="{Binding UserName}" />
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Grid Grid.Row="1" RowSpacing="4">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Entry
+                    x:Name="_etMessage"
+                    Grid.Column="0"
+                    Placeholder="Write Message .." />
+                <Button
+                    Grid.Column="1"
+                    Clicked="Handle_Clicked"
+                    Text="Send!" />
+            </Grid>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage> 

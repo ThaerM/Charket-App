@@ -20,7 +20,7 @@ namespace CharketApp.Pages.Signup
 
         private async void HouseHoldHandler(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new HouseholdProfile());
+            await Navigation.PushAsync(new HouseholdProfile(HouseViewModel));
         }
 
         private void HouseholdeCheckHnadler(object sender, CheckedChangedEventArgs e)

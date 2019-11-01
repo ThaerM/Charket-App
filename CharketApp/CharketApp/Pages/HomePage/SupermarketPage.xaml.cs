@@ -1,4 +1,7 @@
-﻿using System;
+﻿using CharketApp.Model;
+using CharketApp.Model.RealChat;
+using CharketApp.Pages.DetailsPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,5 +19,17 @@ namespace CharketApp.Pages.HomePage
         {
             InitializeComponent();
         }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+
+            if (e.Item != null)
+            {
+                var item = (UserData)e.Item;
+                Navigation.PushAsync(new SuperMarketDetilasPage(item));
+            }
+        }
+
+       
     }
 }

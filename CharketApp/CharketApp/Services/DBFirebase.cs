@@ -43,11 +43,37 @@ namespace CharketApp.Services
                 new RoomChat
                 {
                     Key = item.Key,
-                    Name = item.Object.Name
+                    FromChat = item.Object.FromChat,
+                    ToChat = item.Object.ToChat
                 }).ToList();
         }
+        //Retrun all rooms avalibale 
+        public async Task<RoomChat> GetRoomList(string from, string to)
+        {
+
+            var result = (await _firebaseClient
+                .Child("ChatApp")
+                .OnceAsync<RoomChat>());
+            var valueResult = result.Where(
+                x =>(
+                (x.Object.FromChat == from && x.Object.ToChat == to) ||
+                (x.Object.FromChat == to && x.Object.ToChat == from)) 
+            ).ToList();
+            var resultx = valueResult.Select((item) =>
+                               new RoomChat()
+                               {
+                                   ToChat = item.Object.ToChat,
+                                   FromChat = item.Object.FromChat,
+                                   Key = item.Key
+                               }
+            ).FirstOrDefault();
+
+            return resultx;
+
+
+        }
         //Save room/ chat between pepole
-        public async Task SaveRoom(string _roomName)
+        public async Task SaveRoom(RoomChat _roomName)
         {
             await _firebaseClient
                 .Child("ChatApp")
@@ -77,7 +103,7 @@ namespace CharketApp.Services
             var userData = (await _firebaseClient
                 .Child("Users")
                 .OnceAsync<UserData>()).
-                Where(item => item.Object.UserName == _userName
+                Where(item => item.Object.UserName.ToLower() == _userName.ToLower().Trim()
                 && item.Object.Password == _password)
                 .FirstOrDefault();
             //Check if the user return with data or not
@@ -107,6 +133,36 @@ namespace CharketApp.Services
             }
             //Return the object if it not null
             return userData.Object;
+        }
+        //Get All Data user  
+        public async Task<List<UserData>> GetAllUser()
+        {
+            var userData = (await _firebaseClient
+                .Child("Users")
+                .OnceAsync<UserData>());
+            //Check if the user return with data or not
+            if (userData == null)
+            {
+                //return empty when the userdata is null 
+                return null;
+            }
+            //Return the object if it not null
+            return userData.Select(item => new UserData
+            {
+                FirstName = item.Object.FirstName,
+                UserName = item.Object.UserName,
+                CharityModel = item.Object.CharityModel,
+                Email = item.Object.Email,
+                HouseHoldModel = item.Object.HouseHoldModel,
+                LastName = item.Object.LastName,
+                Location = item.Object.Location,
+                Password = item.Object.Password,
+                PickUpTime = item.Object.PickUpTime,
+                SuperMarket = item.Object.SuperMarket,
+                UserType = item.Object.UserType,
+                ImageName = string.IsNullOrEmpty(item.Object.ImageName) ? "icon7" : item.Object.ImageName
+
+            }).ToList();
         }
         //Sign-up new user 
         public async Task OnSignUp(UserData userData)

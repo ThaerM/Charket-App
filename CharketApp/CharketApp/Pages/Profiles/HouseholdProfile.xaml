@@ -15,35 +15,42 @@
             <Entry
                 Placeholder="First Name"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding FirstName}"
+                TextColor="Black" />
             <Entry
                 Placeholder="Last Name"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding LastName}"
+                TextColor="Black" />
             <Entry
                 Placeholder="Email"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding Email}"
+                TextColor="Black" />
             <Entry
                 Placeholder="Username"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding Username}"
+                TextColor="Black" />
             <Entry
                 IsPassword="True"
                 Placeholder="Password"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding Password}"
+                TextColor="Black" />
             <Entry
                 Placeholder="Location (optional)"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding Location}"
+                TextColor="Black" />
             <Entry
                 Placeholder="Most suitable pick-up time(e.g 9 a.m.- 4 p.m.)"
                 PlaceholderColor="Gray"
-                TextColor="White" />
+                Text="{Binding PickUpTime}"
+                TextColor="Black" />
             <Button
                 BackgroundColor="#0076ff"
-                Clicked="CharitySubmittHandler"
+                Command="{Binding OnHouseHoldCommand}"
                 CornerRadius="15"
                 HeightRequest="55"
                 HorizontalOptions="FillAndExpand"

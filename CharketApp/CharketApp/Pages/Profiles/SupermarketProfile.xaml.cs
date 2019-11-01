@@ -12,14 +12,12 @@ namespace CharketApp.Pages.Profiles
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SupermarketProfile : ContentPage
     {
-        public SupermarketProfile()
+        public SupermarketProfile(ViewModel.SupermarketRegViewModel supermarketVM)
         {
             InitializeComponent();
+            this.BindingContext = supermarketVM;
         }
 
-        private void CharitySubmittHandler(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }

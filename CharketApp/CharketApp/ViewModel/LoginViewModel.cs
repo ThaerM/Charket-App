@@ -35,7 +35,7 @@ namespace CharketApp.ViewModel
             OnLoginCommand = new Command(Login);
         }
         //After Click Command Call this method
-        private async void Login(object obj)
+        private async void Login( )
         {
             //Check the username is null or empty
             if (string.IsNullOrEmpty(UserName))
@@ -69,18 +69,21 @@ namespace CharketApp.ViewModel
                 //If user is supermarket
                 if (UserData.UserType == 1)
                 {
+                    DataInfo.UserDataInfo = UserData;
                     //Go to supermarket page
                     App.Current.MainPage = new NavigationPage(new SupermarketPage());
                 }
                 //if User is household
                 else if (UserData.UserType == 2)
                 {
+                    DataInfo.UserDataInfo = UserData;
                     //Go to household page 
                     App.Current.MainPage = new NavigationPage(new Household());
                 }
                 //if user is charity
                 else if (UserData.UserType == 3)
                 {
+                    DataInfo.UserDataInfo = UserData;
                     //Go to Charity page
                     App.Current.MainPage = new NavigationPage(new CharityPage());
                 }

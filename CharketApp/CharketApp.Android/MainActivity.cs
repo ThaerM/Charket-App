@@ -4,10 +4,11 @@ using Android.Runtime;
 using Android.OS;
 using CarouselView.FormsPlugin.Android;
 using Plugin.CurrentActivity;
+using Com.OneSignal;
 
 namespace CharketApp.Droid
 {
-    [Activity(Label = "CharketApp", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Charket", Icon = "@drawable/Icon_Lunch", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -20,6 +21,8 @@ namespace CharketApp.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
+            OneSignal.Current.StartInit("f560a128-8312-4937-bbe2-9aba86e2b640")
+                .EndInit();
             CarouselViewRenderer.Init();
             LoadApplication(new App());
         }

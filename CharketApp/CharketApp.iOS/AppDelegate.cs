@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using CarouselView.FormsPlugin.iOS;
+using Com.OneSignal;
 using Foundation;
 using UIKit;
 
@@ -25,7 +26,8 @@ namespace CharketApp.iOS
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
             LoadApplication(new App());
-            return base.FinishedLaunching(app, options);
+            OneSignal.Current.StartInit("f560a128-8312-4937-bbe2-9aba86e2b640")
+                     .EndInit(); return base.FinishedLaunching(app, options);
         }
     }
 }

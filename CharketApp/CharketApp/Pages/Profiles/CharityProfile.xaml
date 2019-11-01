@@ -13,24 +13,18 @@
             </Frame>
             <Entry
                 Placeholder="Charity Name"
-                PlaceholderColor="WhiteSmoke"
-                TextColor="White" />
+                PlaceholderColor="Gray"
+                Text="{Binding Username}"
+                TextColor="Black" />
             <Entry
                 IsPassword="True"
                 Placeholder="Password"
-                PlaceholderColor="WhiteSmoke"
-                TextColor="White" />
-            <Entry
-                Placeholder="Food you do accept"
-                PlaceholderColor="WhiteSmoke"
-                TextColor="White" />
-            <Entry
-                Placeholder="Most suitable pick-up time(e.g 9 a.m.- 4 p.m.)"
-                PlaceholderColor="WhiteSmoke"
-                TextColor="White" />
+                PlaceholderColor="Gray"
+                Text="{Binding Password}"
+                TextColor="Black" />
             <Button
                 BackgroundColor="#0076ff"
-                Clicked="CharitySubmittHandler"
+                Command="{Binding OnCharityCommand}"
                 CornerRadius="15"
                 HeightRequest="55"
                 HorizontalOptions="FillAndExpand"

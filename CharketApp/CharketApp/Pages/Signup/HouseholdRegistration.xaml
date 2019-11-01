@@ -3,10 +3,14 @@
     x:Class="CharketApp.Pages.Signup.HouseholdRegistration"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:HoseView="clr-namespace:CharketApp.ViewModel.SignupViewModel"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Title="Household Registation From"
     mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <HoseView:HouseHoldRegViewModel x:Name="HouseViewModel" />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <ScrollView>
             <StackLayout Padding="10" Spacing="15">
@@ -14,24 +18,28 @@
                     x:Name="ContentNameEntry"
                     Placeholder="Content Name"
                     PlaceholderColor="Gray"
+                    Text="{Binding ContentName}"
                     TextColor="Black" />
                 <!--  ********************************  -->
                 <Entry
                     x:Name="EmailAddressEntry"
                     Placeholder="Email Address"
                     PlaceholderColor="Gray"
+                    Text="{Binding EmailAddress}"
                     TextColor="Black" />
                 <!--  ********************************  -->
                 <Entry
                     x:Name="ContactNumberEntry"
                     Placeholder="Contact Number"
                     PlaceholderColor="Gray"
+                    Text="{Binding ContactNumber}"
                     TextColor="Black" />
                 <!--  ********************************  -->
                 <Entry
                     x:Name="AddressEntry"
                     Placeholder="Address"
                     PlaceholderColor="Gray"
+                    Text="{Binding Address}"
                     TextColor="Black" />
                 <!--  ********************************  -->
                 <Label Text="Where can the food be collected from?" TextColor="Gray" />
@@ -40,7 +48,7 @@
                         <CheckBox
                             x:Name="HouseholdCheckBox"
                             CheckedChanged="HouseholdeCheckHnadler"
-                            IsChecked="True" />
+                            IsChecked="{Binding IsHouse}" />
                         <Label
                             Text="Household"
                             TextColor="Black"
@@ -56,6 +64,7 @@
                             IsVisible="False"
                             Placeholder="Type your answer here"
                             PlaceholderColor="Gray"
+                            Text="{Binding IsOtherHouse}"
                             TextColor="Black">
                             <Entry.Triggers>
                                 <DataTrigger
@@ -72,19 +81,19 @@
                 <!--  ********************************  -->
                 <Label Text="Please give a description of the type of food you would like to donate." TextColor="Gray" />
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="CannedFoodCheckBox" />
+                    <CheckBox x:Name="CannedFoodCheckBox" IsChecked="{Binding IsCannedFood}" />
                     <Label Text="Canned Food" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="DryFoodCheckBox" />
+                    <CheckBox x:Name="DryFoodCheckBox" IsChecked="{Binding IsDryFood}" />
                     <Label Text="Dry Food" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="FruitsCheckBox" />
+                    <CheckBox x:Name="FruitsCheckBox" IsChecked="{Binding IsFruits}" />
                     <Label Text="Fruits Food" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="VegetablesCheckBox" />
+                    <CheckBox x:Name="VegetablesCheckBox" IsChecked="{Binding IsVegetables}" />
                     <Label Text="Vegetables" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -97,6 +106,7 @@
                         IsVisible="False"
                         Placeholder="Other"
                         PlaceholderColor="Gray"
+                        Text="{Binding IsOtherFoodType}"
                         TextColor="Black">
                         <Entry.Triggers>
                             <DataTrigger
@@ -115,6 +125,7 @@
                     Keyboard="Numeric"
                     Placeholder="On average"
                     PlaceholderColor="Gray"
+                    Text="{Binding AverageFood}"
                     TextColor="Black" />
 
 
@@ -123,6 +134,7 @@
                 <Picker
                     x:Name="ExpireDatePicker"
                     Title="Select"
+                    ItemDisplayBinding="{Binding ExpiryDate}"
                     TextColor="Black"
                     TitleColor="Black"
                     WidthRequest="150">
@@ -138,6 +150,7 @@
                     IsVisible="False"
                     Placeholder="Write the other here..."
                     PlaceholderColor="Gray"
+                    Text="{Binding OtherExpiryDate}"
                     TextColor="Black">
                     <Entry.Triggers>
                         <DataTrigger
@@ -155,6 +168,7 @@
                 <Picker
                     x:Name="otherOnceDateDatePicker"
                     Title="Select"
+                    ItemDisplayBinding="{Binding FrequentlyFood}"
                     TextColor="Black"
                     TitleColor="Black"
                     WidthRequest="150">
@@ -171,6 +185,7 @@
                     IsVisible="False"
                     Placeholder="Write the other here..."
                     PlaceholderColor="Gray"
+                    Text="{Binding OtherFrequentlyFood}"
                     TextColor="Black">
                     <Entry.Triggers>
                         <DataTrigger
@@ -188,6 +203,7 @@
                 <Picker
                     x:Name="timeCharityPicker"
                     Title="Select time"
+                    ItemDisplayBinding="{Binding TimePeriodFood}"
                     TextColor="Black"
                     TitleColor="Black"
                     WidthRequest="150">
@@ -202,6 +218,7 @@
                     IsVisible="False"
                     Placeholder="Write the time here..."
                     PlaceholderColor="Gray"
+                    Text="{Binding OtherTimePeriodFood}"
                     TextColor="Black">
                     <Entry.Triggers>
                         <DataTrigger

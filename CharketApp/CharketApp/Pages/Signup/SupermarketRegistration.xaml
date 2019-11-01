@@ -18,6 +18,7 @@
                     x:Name="NameBusinessEntry"
                     Placeholder="Name of business"
                     PlaceholderColor="Gray"
+                    Text="{Binding NameBusiness}"
                     TextColor="Black" />
 
 
@@ -26,6 +27,7 @@
                     x:Name="ContentNameEntry"
                     Placeholder="Contact name"
                     PlaceholderColor="Gray"
+                    Text="{Binding ContentName}"
                     TextColor="Black" />
 
 
@@ -34,6 +36,7 @@
                     x:Name="EmailAddressEntry"
                     Placeholder="Email address"
                     PlaceholderColor="Gray"
+                    Text="{Binding EmailAddress}"
                     TextColor="Black" />
 
 
@@ -42,6 +45,7 @@
                     x:Name="ContactNumberEntry"
                     Placeholder="Contact number"
                     PlaceholderColor="Gray"
+                    Text="{Binding ContactNumber}"
                     TextColor="Black" />
 
 
@@ -50,6 +54,7 @@
                     x:Name="AddressEntry"
                     Placeholder="Address"
                     PlaceholderColor="Gray"
+                    Text="{Binding Address}"
                     TextColor="Black" />
 
 
@@ -60,7 +65,7 @@
                         <CheckBox
                             x:Name="SupermarketCheckBox"
                             CheckedChanged="SupermarketCheckHnadler"
-                            IsChecked="True" />
+                            IsChecked="{Binding IsSuperMarket}" />
                         <Label
                             Text="Supermarket"
                             TextColor="Black"
@@ -76,6 +81,7 @@
                             IsVisible="False"
                             Placeholder="Type your answer here"
                             PlaceholderColor="Gray"
+                            Text="{Binding OtherSupermarket}"
                             TextColor="Black">
                             <Entry.Triggers>
                                 <DataTrigger
@@ -90,23 +96,22 @@
                 </StackLayout>
 
 
-
                 <!--  *******************************  -->
                 <Label Text="Please give a description of the type of food you would like to donate?" TextColor="Gray" />
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="CannedFoodCheckBox" />
+                    <CheckBox x:Name="CannedFoodCheckBox" IsChecked="{Binding IsCannedFood}" />
                     <Label Text="Canned Food" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="DryFoodCheckBox" />
+                    <CheckBox x:Name="DryFoodCheckBox" IsChecked="{Binding IsDryFood}" />
                     <Label Text="Dry Food" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="FruitsCheckBox" />
+                    <CheckBox x:Name="FruitsCheckBox" IsChecked="{Binding IsFruits}" />
                     <Label Text="Fruits Food" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <CheckBox x:Name="VegetablesCheckBox" />
+                    <CheckBox x:Name="VegetablesCheckBox" IsChecked="{Binding IsVegetables}" />
                     <Label Text="Vegetables" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
@@ -119,6 +124,7 @@
                         IsVisible="False"
                         Placeholder="Other"
                         PlaceholderColor="Gray"
+                        Text="{Binding IsOtherFoodType}"
                         TextColor="Black">
                         <Entry.Triggers>
                             <DataTrigger
@@ -139,6 +145,7 @@
                     Keyboard="Numeric"
                     Placeholder="On average"
                     PlaceholderColor="Gray"
+                    Text="{Binding AverageFood}"
                     TextColor="Black" />
 
 
@@ -147,6 +154,7 @@
                 <Picker
                     x:Name="ExpireDatePicker"
                     Title="Select"
+                    ItemDisplayBinding="{Binding ExpiryDate}"
                     TextColor="Black"
                     TitleColor="Black"
                     WidthRequest="150">
@@ -162,6 +170,7 @@
                     IsVisible="False"
                     Placeholder="Write the other here..."
                     PlaceholderColor="Gray"
+                    Text="{Binding OtherExpiryDate}"
                     TextColor="Black">
                     <Entry.Triggers>
                         <DataTrigger
@@ -179,6 +188,7 @@
                 <Picker
                     x:Name="otherOnceDateDatePicker"
                     Title="Select"
+                    ItemDisplayBinding="{Binding FrequentlyFood}"
                     TextColor="Black"
                     TitleColor="Black"
                     WidthRequest="150">
@@ -195,6 +205,7 @@
                     IsVisible="False"
                     Placeholder="Write the other here..."
                     PlaceholderColor="Gray"
+                    Text="{Binding OtherFrequentlyFood}"
                     TextColor="Black">
                     <Entry.Triggers>
                         <DataTrigger
@@ -212,6 +223,7 @@
                 <Picker
                     x:Name="timeCharityPicker"
                     Title="Select time"
+                    ItemDisplayBinding="{Binding TimePeriodFood}"
                     TextColor="Black"
                     TitleColor="Black"
                     WidthRequest="150">
@@ -226,6 +238,7 @@
                     IsVisible="False"
                     Placeholder="Write the time here..."
                     PlaceholderColor="Gray"
+                    Text="{Binding OtherTimePeriodFood}"
                     TextColor="Black">
                     <Entry.Triggers>
                         <DataTrigger

@@ -5,20 +5,44 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel="clr-namespace:CharketApp.ViewModel"
     mc:Ignorable="d">
+    <ContentPage.BindingContext>
+        <viewModel:CharityHomeViewModel x:Name="Charity" />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Charities" />
-            <ListView>
+            <Label
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="Charities"
+                TextColor="Black" />
+            <ListView HasUnevenRows="True" ItemsSource="{Binding UserCollcetion}" ItemTapped="ListView_ItemTapped">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <StackLayout>
-                            <Label Text="{Binding}" />
-                            <Image HeightRequest="100" Source="{Binding}" />
-                        </StackLayout>
+                        <ViewCell>
+                            <Grid Padding="25">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <StackLayout
+                                    Grid.Row="0"
+                                    HorizontalOptions="FillAndExpand"
+                                    VerticalOptions="FillAndExpand">
+                                    <Label
+                                        HorizontalOptions="CenterAndExpand"
+                                        Text="{Binding UserName}"
+                                        TextColor="Black" />
+                                    <Image
+                                        Aspect="Fill"
+                                        HeightRequest="300"
+                                        Source="{Binding ImageName}" />
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
     </ContentPage.Content>
-</ContentPage>
+</ContentPage>  
