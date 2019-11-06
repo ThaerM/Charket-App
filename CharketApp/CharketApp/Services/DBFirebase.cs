@@ -103,7 +103,7 @@ namespace CharketApp.Services
             var userData = (await _firebaseClient
                 .Child("Users")
                 .OnceAsync<UserData>()).
-                Where(item => item.Object.UserName.ToLower() == _userName.ToLower().Trim()
+                Where(item => item.Object.UserName == _userName
                 && item.Object.Password == _password)
                 .FirstOrDefault();
             //Check if the user return with data or not

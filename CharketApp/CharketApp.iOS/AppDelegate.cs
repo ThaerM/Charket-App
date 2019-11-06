@@ -26,7 +26,7 @@ namespace CharketApp.iOS
             global::Xamarin.Forms.Forms.Init();
             CarouselViewRenderer.Init();
             LoadApplication(new App());
-            OneSignal.Current.StartInit("f560a128-8312-4937-bbe2-9aba86e2b640")
+            OneSignal.Current.StartInit("fabc25cc-6ec5-4587-b119-da449f3219de")
                      .EndInit(); return base.FinishedLaunching(app, options);
         }
     }

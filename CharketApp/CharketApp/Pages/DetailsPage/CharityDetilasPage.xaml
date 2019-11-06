@@ -22,11 +22,12 @@
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-
-                        <TextCell
-                            Detail="{Binding UserMessage}"
-                            DetailColor="Fuchsia"
-                            Text="{Binding UserName}" />
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding UserMessage}" />
+                                <Label Text="{Binding UserName}" TextColor="Black" />
+                            </StackLayout>
+                        </ViewCell>
 
                     </DataTemplate>
                 </ListView.ItemTemplate>

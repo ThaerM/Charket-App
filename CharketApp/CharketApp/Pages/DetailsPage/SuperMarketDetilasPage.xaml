@@ -4,9 +4,16 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:local="clr-namespace:CharketApp.Controler"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:AlignmentConverter x:Key="ChatTextAlignmentConvert" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
+
         <Grid>
 
             <Grid.RowDefinitions>
@@ -18,16 +25,26 @@
             <ListView
                 x:Name="_lstChat"
                 Grid.Row="0"
-                ItemsSource="{Binding ChatCollection}" 
+                HasUnevenRows="True"
+                ItemsSource="{Binding ChatCollection}"
                 SeparatorVisibility="None">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-
-                        <TextCell
-                            Detail="{Binding UserMessage}"
-                            DetailColor="Fuchsia"
-                            Text="{Binding UserName}" />
-
+                        <ViewCell>
+                                <Grid Padding="10" RowSpacing="10">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Frame
+                                        BorderColor="Blue"
+                                        CornerRadius="15"
+                                        IsVisible="{Binding IsBorder}" />
+                                    <StackLayout Padding="5" HorizontalOptions="{Binding IsMain, Converter={StaticResource ChatTextAlignmentConvert}}">
+                                        <Label Text="{Binding UserName}" TextColor="Black" />
+                                        <Label FontSize="Medium" Text="{Binding UserMessage}" />
+                                    </StackLayout>
+                                </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
