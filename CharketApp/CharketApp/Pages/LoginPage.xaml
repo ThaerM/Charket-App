@@ -11,7 +11,7 @@
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.BindingContext>
-        <viewModel:LoginViewModel x:Name="loginVM"/>
+        <viewModel:LoginViewModel x:Name="loginVM" />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout Margin="5" Padding="14">

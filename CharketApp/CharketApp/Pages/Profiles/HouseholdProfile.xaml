@@ -9,7 +9,7 @@
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout Padding="15">
-            <Frame BackgroundColor="#226dc0" HeightRequest="150">
+            <Frame BackgroundColor="Transparent" HeightRequest="150">
                 <Image Source="camera" />
             </Frame>
             <Entry

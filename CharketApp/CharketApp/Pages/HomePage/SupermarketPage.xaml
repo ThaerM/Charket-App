@@ -6,20 +6,24 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="clr-namespace:CharketApp.ViewModel"
-    Title="Charket"
+    NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.BindingContext>
         <viewModel:SuperMarkeHometViewModel x:Name="superMarketView" />
     </ContentPage.BindingContext>
+
     <ContentPage.Content>
+
         <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+            <SearchBar Placeholder="Search by name" TextChanged="SearchBarHandler" />
             <Label
                 FontAttributes="Bold"
                 FontSize="Medium"
                 HorizontalOptions="Center"
-                Text="Supermarket" 
+                Text="Supermarket"
                 TextColor="Black" />
             <ListView
+                x:Name="SupermarketListView"
                 HasUnevenRows="True"
                 ItemTapped="ListView_ItemTapped"
                 ItemsSource="{Binding UserCollcetion}">

@@ -160,7 +160,7 @@ namespace CharketApp.Services
                 PickUpTime = item.Object.PickUpTime,
                 SuperMarket = item.Object.SuperMarket,
                 UserType = item.Object.UserType,
-                ImageName = string.IsNullOrEmpty(item.Object.ImageName) ? "icon7" : item.Object.ImageName
+                ImageName = string.IsNullOrEmpty(item.Object.ImageName) ? "Avatar1" : item.Object.ImageName
 
             }).ToList();
         }

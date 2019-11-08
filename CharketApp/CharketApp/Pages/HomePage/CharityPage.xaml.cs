@@ -27,5 +27,16 @@ namespace CharketApp.Pages.HomePage
                 Navigation.PushAsync(new SuperMarketDetilasPage(item));
             }
         }
+
+        private void SearchBarHandler(object sender, TextChangedEventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                CharityListView.ItemsSource = Charity.UserCollcetion;
+            else
+                CharityListView.ItemsSource = Charity.UserCollcetion.Where(i => i.UserName.ToLower().Contains(e.NewTextValue.ToLower()));
+
+        }
+
     }
 }

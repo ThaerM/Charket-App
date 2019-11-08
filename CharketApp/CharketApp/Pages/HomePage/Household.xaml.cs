@@ -27,5 +27,14 @@ namespace CharketApp.Pages.HomePage
                 Navigation.PushAsync(new HouseHoldDetailsPage(item));
             }
         }
+
+        private void SearchBarHandler(object sender, TextChangedEventArgs e)
+        {
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                HouseholdListView.ItemsSource = HouseHold.UserCollcetion;
+            else
+                HouseholdListView.ItemsSource = HouseHold.UserCollcetion.Where(i => i.UserName.ToLower().Contains(e.NewTextValue.ToLower()));
+        }
     }
 }

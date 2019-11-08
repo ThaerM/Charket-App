@@ -6,18 +6,24 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="clr-namespace:CharketApp.ViewModel"
+    NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.BindingContext>
         <viewModel:CharityHomeViewModel x:Name="Charity" />
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <StackLayout>
+            <SearchBar Placeholder="Search by name" TextChanged="SearchBarHandler" />
             <Label
                 FontSize="Medium"
                 HorizontalOptions="Center"
                 Text="Charities"
                 TextColor="Black" />
-            <ListView HasUnevenRows="True" ItemsSource="{Binding UserCollcetion}" ItemTapped="ListView_ItemTapped">
+            <ListView
+                x:Name="CharityListView"
+                HasUnevenRows="True"
+                ItemTapped="ListView_ItemTapped"
+                ItemsSource="{Binding UserCollcetion}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

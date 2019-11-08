@@ -13,7 +13,7 @@
             <Label
                 FontSize="Medium"
                 HorizontalTextAlignment="Center"
-                Text="Welcome! Lest's get you started, Sign as a:"
+                Text="Welcome! Let's get you started, Sign up as a:"
                 TextColor="Black" />
             <Button
                 BackgroundColor="#0076ff"
@@ -55,7 +55,7 @@
                 VerticalOptions="EndAndExpand">
                 <Label
                     HorizontalTextAlignment="Center"
-                    Text="Alerday have an account?"
+                    Text="Already have an account?"
                     TextColor="Gray"
                     VerticalTextAlignment="Center" />
                 <Label

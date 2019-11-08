@@ -244,4 +244,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\Icon_Lunch.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Avatar1.jpg" />
+  </ItemGroup>
 </Project>

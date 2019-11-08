@@ -6,7 +6,7 @@
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel="clr-namespace:CharketApp.ViewModel"
-    Title="Supermarket Registration Forms"
+    Title="Supermarket Registration Form"
     mc:Ignorable="d">
     <ContentPage.BindingContext>
         <viewModel:SupermarketRegViewModel x:Name="SupermarketVM" />
@@ -108,7 +108,7 @@
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <CheckBox x:Name="FruitsCheckBox" IsChecked="{Binding IsFruits}" />
-                    <Label Text="Fruits Food" TextColor="Black" />
+                    <Label Text="Fruits" TextColor="Black" />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <CheckBox x:Name="VegetablesCheckBox" IsChecked="{Binding IsVegetables}" />
@@ -150,7 +150,7 @@
 
 
                 <!--  *******************************  -->
-                <Label Text="What is the estimated expiry date on the food?" TextColor="Gray" />
+                <Label Text="What is the estimated expiry date of the food?" TextColor="Gray" />
                 <Picker
                     x:Name="ExpireDatePicker"
                     Title="Select"
@@ -159,9 +159,9 @@
                     TitleColor="Black"
                     WidthRequest="150">
                     <Picker.Items>
-                        <x:String>one week before expiry date</x:String>
+                        <x:String>One week before expiry date</x:String>
                         <x:String>Two weeks before expiry date</x:String>
-                        <x:String>one month before expiry date</x:String>
+                        <x:String>One month before expiry date</x:String>
                         <x:String>Two months before expiry date</x:String>
                         <x:String>Other</x:String>
                     </Picker.Items>
@@ -194,10 +194,10 @@
                     WidthRequest="150">
                     <Picker.Items>
                         <x:String>Every Day</x:String>
-                        <x:String>Once every three Days</x:String>
+                        <x:String>Once every three days</x:String>
                         <x:String>Once every week</x:String>
                         <x:String>Once every two weeks</x:String>
-                        <x:String>Once evry month</x:String>
+                        <x:String>Once every  month</x:String>
                         <x:String>Other</x:String>
                     </Picker.Items>
                 </Picker>

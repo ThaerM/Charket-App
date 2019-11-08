@@ -30,6 +30,17 @@ namespace CharketApp.Pages.HomePage
             }
         }
 
-       
+        private void SearchBarHandler(object sender, TextChangedEventArgs e)
+        {
+          
+
+            if (string.IsNullOrWhiteSpace(e.NewTextValue))
+                SupermarketListView.ItemsSource = superMarketView.UserCollcetion;
+            else
+                SupermarketListView.ItemsSource = superMarketView.UserCollcetion.Where(i => i.UserName.ToLower().Contains(e.NewTextValue.ToLower()));
+
+        }
+
+        
     }
 }
