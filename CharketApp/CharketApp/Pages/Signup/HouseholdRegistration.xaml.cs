@@ -20,6 +20,26 @@ namespace CharketApp.Pages.Signup
 
         private async void HouseHoldHandler(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(ContentNameEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the contact name", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(EmailAddressEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the email address", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(ContactNumberEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the contact number", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(AddressEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the address", "Ok");
+                return;
+            }
             await Navigation.PushAsync(new HouseholdProfile(HouseViewModel));
         }
 

@@ -188,6 +188,7 @@ namespace CharketApp.ViewModel
                 UserDataCollection.Email = Email;
                 UserDataCollection.Location = Location;
                 UserDataCollection.PickUpTime = PickUpTime;
+                UserDataCollection.ImageName = DataInfo.ImagePath;
                 UserDataCollection.SuperMarket = new SuperMarketModel
                 {
                     NameOfBusiness = NameBusiness,

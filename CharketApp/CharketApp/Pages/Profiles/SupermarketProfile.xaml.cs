@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CharketApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,10 @@ namespace CharketApp.Pages.Profiles
             this.BindingContext = supermarketVM;
         }
 
-      
+        private void TapGestureRecognizer_Tapped(object sender, EventArgs e)
+        {
+            DBFirebase dBFirebase = new DBFirebase();
+            dBFirebase.OnUploadFile(cmaera);
+        }
     }
 }

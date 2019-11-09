@@ -80,6 +80,7 @@ namespace CharketApp.ViewModel.SignupViewModel
                 UserDataCollection.UserType = 3;
                 UserDataCollection.UserName = Username;
                 UserDataCollection.Password = Password;
+                UserDataCollection.ImageName = DataInfo.ImagePath;
                 UserDataCollection.CharityModel = new CharityModel
                 {
                     OrginazationName = OrginazationName,

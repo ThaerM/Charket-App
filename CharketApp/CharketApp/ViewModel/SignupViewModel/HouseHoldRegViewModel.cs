@@ -121,6 +121,7 @@ namespace CharketApp.ViewModel.SignupViewModel
                 UserDataCollection.Email = Email;
                 UserDataCollection.Location = Location;
                 UserDataCollection.PickUpTime = PickUpTime;
+                UserDataCollection.ImageName = DataInfo.ImagePath;
                 UserDataCollection.HouseHoldModel = new HouseHoldModel
                 {
                     ContentName = ContentName,

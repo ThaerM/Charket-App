@@ -55,9 +55,9 @@ namespace CharketApp.Services
                 .Child("ChatApp")
                 .OnceAsync<RoomChat>());
             var valueResult = result.Where(
-                x =>(
+                x => (
                 (x.Object.FromChat == from && x.Object.ToChat == to) ||
-                (x.Object.FromChat == to && x.Object.ToChat == from)) 
+                (x.Object.FromChat == to && x.Object.ToChat == from))
             ).ToList();
             var resultx = valueResult.Select((item) =>
                                new RoomChat()
@@ -147,7 +147,7 @@ namespace CharketApp.Services
                 return null;
             }
             //Return the object if it not null
-            return userData.Select(item => new UserData
+            var resultData = userData.Select(item => new UserData
             {
                 FirstName = item.Object.FirstName,
                 UserName = item.Object.UserName,
@@ -163,6 +163,21 @@ namespace CharketApp.Services
                 ImageName = string.IsNullOrEmpty(item.Object.ImageName) ? "Avatar1" : item.Object.ImageName
 
             }).ToList();
+            try
+            {
+                foreach (var item in resultData)
+                {
+                    if (item.ImageName.Contains("?alt=media&token="))
+                    {
+                        item.ImageName = await DownloadFile(item.ImageName);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error " + ex.Message);
+            }
+            return resultData;
         }
         //Sign-up new user 
         public async Task OnSignUp(UserData userData)
@@ -231,10 +246,12 @@ namespace CharketApp.Services
         //Uplaod image on the firebase storage
         async Task<string> UploadFile(Stream fileStream, string fileName)
         {
-            var imageURL = await _firebaseStorage
+            var imageURL = await new FirebaseStorage("charket-29581.appspot.com")
                 .Child("CharketAppStorage")
-                .Child(fileName)
+                .Child("Image" + DateTime.Now.Millisecond + ".jpg")
                 .PutAsync(fileStream);
+            DataInfo.ImagePath = imageURL;
+
             return imageURL;
 
         }

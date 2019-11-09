@@ -23,6 +23,36 @@ namespace CharketApp.Pages.Signup
 
         private async void CharitySubmittHandler(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(OrginazationNameEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the orginazation name", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(StreetAddressEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the street address", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(PostcodeEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the post code", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(OfficePhoneNumberEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the office phone number", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(MobileNumberEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the mobile phone number", "Ok");
+                return;
+            }
+            if (string.IsNullOrEmpty(ContactEmailEntry.Text))
+            {
+                await DisplayAlert("", "Please fill the contact email address", "Ok");
+                return;
+            }
             await Navigation.PushAsync(new CharityProfile(HouseViewModel));
         }
 

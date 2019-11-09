@@ -8,6 +8,6 @@ namespace CharketApp.Services
     {
         public static string URLData { get { return "https://charket-29581.firebaseio.com/"; } }
 
-        public static string StorageURLData { get { return "gs://charket-29581.appspot.com/"; } }
+        public static string StorageURLData { get { return "charket-29581.appspot.com/"; } }
     }
 }

@@ -10,7 +10,11 @@
     <ContentPage.Content>
         <StackLayout Padding="15">
             <Frame BackgroundColor="Transparent" HeightRequest="150">
-                <Image Source="camera" />
+                <Image x:Name="cmaera" Source="camera">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </Image.GestureRecognizers>
+                </Image>
             </Frame>
             <Entry
                 Placeholder="Charity Name"
