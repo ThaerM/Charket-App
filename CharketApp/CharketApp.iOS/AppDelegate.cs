@@ -1,5 +1,4 @@
-﻿using CarouselView.FormsPlugin.iOS;
-using Com.OneSignal;
+﻿
 using Foundation;
 using UIKit;
 
@@ -21,10 +20,10 @@ namespace CharketApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            CarouselViewRenderer.Init();
             LoadApplication(new App());
-            OneSignal.Current.StartInit("fabc25cc-6ec5-4587-b119-da449f3219de")
-                     .EndInit(); return base.FinishedLaunching(app, options);
+
+            
+            return base.FinishedLaunching(app, options);
         }
     }
 }

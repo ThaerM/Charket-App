@@ -3,7 +3,6 @@
     x:Class="CharketApp.Pages.StartPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="White"
@@ -15,16 +14,13 @@
                 <RowDefinition Height="50" />
                 <RowDefinition Height="25" />
             </Grid.RowDefinitions>
-            <controls:CarouselViewControl
+            <CarouselView
                 x:Name="carouselImages"
                 Grid.Row="0"
-                CurrentPageIndicatorTintColor="#0076ff"
                 IsSwipeEnabled="False"
-                Orientation="Horizontal"
                 Position="{Binding SelectedIndex}"
-                ShowIndicators="True"
                 VerticalOptions="FillAndExpand">
-                <controls:CarouselViewControl.ItemTemplate>
+                <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <ContentView>
                             <ContentView.Content>
@@ -32,8 +28,16 @@
                             </ContentView.Content>
                         </ContentView>
                     </DataTemplate>
-                </controls:CarouselViewControl.ItemTemplate>
-            </controls:CarouselViewControl>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView
+                HorizontalOptions="Center"
+                IndicatorColor="#0076ff"
+                IndicatorSize="10"
+                IndicatorView.ItemsSourceBy="carouselImages"
+                SelectedIndicatorColor="Black"
+                TranslationY="-25"
+                VerticalOptions="End" />
             <Button
                 x:Name="ImageNext"
                 Grid.Row="1"

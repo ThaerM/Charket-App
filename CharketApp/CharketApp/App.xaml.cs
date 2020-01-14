@@ -11,9 +11,15 @@ namespace CharketApp
         public App()
         {
             InitializeComponent();
-            OneSignal.Current.StartInit("f560a128-8312-4937-bbe2-9aba86e2b640")
-                    .EndInit();
+
+
+            Device.SetFlags(new[] { "CarouselView_Experimental", "IndicatorView_Experimental", "SwipeView_Experimental" });
             MainPage = new StartPage();
+#if !DEBUG
+            if (Device.OS != TargetPlatform.iOS)
+            OneSignal.Current.StartInit("f560a128-8312-4937-bbe2-9aba86e2b640")
+                            .EndInit();
+#endif
         }
 
         protected override void OnStart()
